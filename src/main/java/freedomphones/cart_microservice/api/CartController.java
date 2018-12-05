@@ -15,18 +15,18 @@ public class CartController{
     @Autowired
     Manager manager;
 
-    @PostMapping(value = "/addItem/{username}")
+    @PostMapping(value = "/addItem/{username}", produces="application/json")
     @ResponseBody
     public String addItem(@RequestBody String body, @PathVariable String username){
         return manager.addItem(body, username);
     }
     @ResponseBody
-    @GetMapping(value = "/getCart/{username}")
+    @GetMapping(value = "/getCart/{username}", produces="application/json")
     public String addItem(@PathVariable String username){
         return manager.getCart(username);
     }
     @ResponseBody
-    @GetMapping(value = "/deleteItem/{username}/{prod_id}")
+    @GetMapping(value = "/deleteItem/{username}/{prod_id}", produces="application/json")
     public String deleteItem(@PathVariable String username, @PathVariable String prod_id){
         return manager.deleteItem(username, prod_id);
     }
