@@ -36,4 +36,11 @@ public class CartDbClient{
         params.put("username", username);
         return restTemplate.getForObject(uri, String.class, params);
     }
+    public String clearCart(String username){
+        final String uri = "https://freedomphones-zuul-svc.herokuapp.com/cart-db-service/clearCart/{username}";
+        RestTemplate restTemplate = new RestTemplate();
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("username", username);
+        return restTemplate.getForObject(uri, String.class, params);
+    }
 }

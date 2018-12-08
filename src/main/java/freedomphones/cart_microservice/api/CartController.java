@@ -30,4 +30,9 @@ public class CartController{
     public String deleteItem(@PathVariable String username, @PathVariable String prod_id){
         return manager.deleteItem(username, prod_id);
     }
+    @ResponseBody
+    @GetMapping(value = "/clearCart/{username}", produces="application/json")
+    public String deleteItem(@PathVariable String username){
+        return manager.deleteItem(username);
+    }
 }

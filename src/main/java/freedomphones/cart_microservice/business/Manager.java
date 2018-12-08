@@ -19,4 +19,7 @@ public class Manager{
     public String deleteItem(String username, String prod_id){
         return cartDbClient.deleteItem(username, prod_id);
     }
+    public String deleteItem(String username){
+        return cartDbClient.clearCart(username);
+    }
 }
